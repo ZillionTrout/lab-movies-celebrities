@@ -1,16 +1,23 @@
-<h2>Add your favorites Movies</h2>
+<h2>New Movie</h2>
 
-<form action="/movies/create" method="POST">
-    <label for="name">Name</label>
-    <input type="text" name="name">
-    
-    <label for="occupation">Occupation</label>
-    <input type="text" name="occupation">
+<form action="/movies/create" method="post">
+    <label for="title">Title</label>
+    <input type="text" name="title">
 
-    <label for="catchPhrase">Catch Phrase</label>
-    <input type="text" name="catchPhrase">
+    <label for="genre">Genre</label>
+    <input type="text" name="genre">
 
-    <button type="submit">Add!</button>
+    <label for="plot">Plot</label>
+    <input type="text" name="plot">
+
+    <label for="cast">Cast</label>
+    <select name="cast">
+        {{#each celebrities}}
+            <option value={{id}}>{{name}}</option>        
+        {{/each}}
+    </select>
+
+    <button type="submit">submit</button>
 </form>
 
 <a href="/">Return</a>
